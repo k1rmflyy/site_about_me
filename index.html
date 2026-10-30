@@ -1,109 +1,87 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>k1rmflyy</title>
-<meta name="description" content="k1rmflyy — backend / ML / Android.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Oswald:wght@200;300;400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site/css/styles.css">
-<link rel="icon" href="site/icon-512.png" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="k1rmflyy — Android developer. Kotlin, Jetpack Compose.">
+  <meta name="theme-color" content="#0b0b0c">
+  <title>k1rmflyy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="bg" aria-hidden="true">
-    <span class="orb orb--1"></span>
-    <span class="orb orb--2"></span>
-    <span class="orb orb--3"></span>
-  </div>
-  <div class="scan" aria-hidden="true"></div>
+  <canvas id="rain" aria-hidden="true"></canvas>
+  <div class="fog" aria-hidden="true"></div>
   <div class="grain" aria-hidden="true"></div>
 
-  <nav class="nav">
-    <a href="#top" class="nav__logo">k1rmflyy</a>
-    <div class="nav__links">
-      <a href="#about"><span>01</span> о себе</a>
-      <a href="#stack"><span>02</span> стек</a>
-      <a href="#contact"><span>03</span> связь</a>
-    </div>
-  </nav>
+  <header class="nav reveal" style="--d:.2s">
+    <a href="#top" class="nav-logo">k1rmflyy</a>
+    <nav class="nav-links">
+      <a href="#about">about</a>
+      <a href="#stack">stack</a>
+      <a href="#contact">contact</a>
+    </nav>
+  </header>
 
-  <main>
-    <header class="hero" id="top">
-      <h1 class="hero__name glitch" data-text="k1rmflyy">k1rmflyy</h1>
-      <div class="hero__meta">
-        <span>backend</span><span class="sep">/</span><span>ml</span><span class="sep">/</span><span>android</span>
-      </div>
-      <p class="hero__quote">тишина громче любого кода</p>
-      <div class="hero__actions">
-        <a class="btn btn--red" href="https://github.com/k1rmflyy" target="_blank" rel="noopener">GITHUB</a>
-        <a class="btn" href="#contact">СВЯЗАТЬСЯ</a>
-      </div>
-    </header>
+  <main id="top">
 
-    <section class="section" id="about">
-      <div class="section__head">
-        <span class="section__no">01</span>
-        <h2 class="section__title">о себе</h2>
+    <section class="hero">
+      <p class="label reveal" style="--d:.6s">android developer</p>
+      <h1 class="hero-name reveal" style="--d:1s">k1rmflyy</h1>
+      <div class="hero-links reveal" style="--d:1.7s">
+        <a href="https://github.com/k1rmflyy" target="_blank" rel="noopener" class="link link-main">github</a>
+        <a href="#contact" class="link">contact</a>
       </div>
-      <div class="section__body">
-        <p class="prose">
-          Пишу бэкенд на <b>Go</b>, собираю <b>ML-агентов</b> и делаю <b>Android</b>.
-          Тишина, чистый код, вещи, которые просто работают.
+      <div class="scroll-hint reveal" style="--d:2.4s" aria-hidden="true"><span></span></div>
+    </section>
+
+    <section class="block" id="about">
+      <p class="label reveal">about</p>
+      <div class="about-grid">
+        <p class="about-text reveal" style="--d:.15s">
+          I build Android apps with Kotlin. Clean architecture, calm interfaces,
+          and things that just work.
         </p>
-        <ul class="facts">
-          <li><span class="facts__k">место</span><span class="facts__v">London</span></li>
-          <li><span class="facts__k">фокус</span><span class="facts__v">backend · ml · android</span></li>
-          <li><span class="facts__k">языки</span><span class="facts__v">Go · Kotlin</span></li>
-          <li><span class="facts__k">статус</span><span class="facts__v">на связи</span></li>
+        <ul class="facts reveal" style="--d:.3s">
+          <li><span>focus</span>android</li>
+          <li><span>language</span>kotlin</li>
+          <li><span>ui</span>jetpack compose</li>
+          <li><span>status</span>open to work</li>
         </ul>
       </div>
     </section>
 
-    <section class="section" id="stack">
-      <div class="section__head">
-        <span class="section__no">02</span>
-        <h2 class="section__title">стек</h2>
-      </div>
-      <div class="section__body">
-        <ul class="chips">
-          <li>Go</li><li>Kotlin</li><li>Android</li>
-          <li>LLM / Agents</li><li>Docker</li><li>PostgreSQL</li><li>Linux</li><li>Git</li>
-        </ul>
+    <section class="block" id="stack">
+      <p class="label reveal">stack</p>
+      <ul class="stack">
+        <li class="reveal" style="--d:.05s"><span>Kotlin</span><em>01</em></li>
+        <li class="reveal" style="--d:.12s"><span>Jetpack Compose</span><em>02</em></li>
+        <li class="reveal" style="--d:.19s"><span>Android SDK</span><em>03</em></li>
+        <li class="reveal" style="--d:.26s"><span>Coroutines · Flow</span><em>04</em></li>
+        <li class="reveal" style="--d:.33s"><span>Room · Retrofit</span><em>05</em></li>
+        <li class="reveal" style="--d:.40s"><span>Docker · PostgreSQL</span><em>06</em></li>
+        <li class="reveal" style="--d:.47s"><span>Git</span><em>07</em></li>
+      </ul>
+    </section>
+
+    <section class="block contact" id="contact">
+      <p class="label reveal">contact</p>
+      <a href="mailto:k1rmflyy@gmail.com" class="mail reveal" style="--d:.15s">k1rmflyy@gmail.com</a>
+      <div class="contact-links reveal" style="--d:.3s">
+        <a href="https://github.com/k1rmflyy" target="_blank" rel="noopener" class="link">github / k1rmflyy</a>
       </div>
     </section>
 
-    <section class="section section--contact" id="contact">
-      <div class="section__head">
-        <span class="section__no">03</span>
-        <h2 class="section__title">связь</h2>
-      </div>
-      <div class="section__body">
-        <h3 class="contact__lead">По вопросам, пишите:</h3>
-        <div class="contact__links">
-          <a class="contact-row" href="https://github.com/k1rmflyy" target="_blank" rel="noopener">
-            <span class="contact-row__k">github</span>
-            <span class="contact-row__v">/k1rmflyy →</span>
-          </a>
-          <!-- <a class="contact-row" href="https://t.me/k1rmflyy" target="_blank" rel="noopener">
-            <span class="contact-row__k">telegram</span>
-            <span class="contact-row__v">@k1rmflyy →</span>
-          </a> -->
-          <a class="contact-row" href="mailto:k1rmflyy@gmail.com">
-            <span class="contact-row__k">email</span>
-            <span class="contact-row__v">k1rmflyy@gmail.com</span>
-          </a>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer class="footer">
-    <span>k1rmflyy © 2026</span>
+    <span>k1rmflyy</span>
+    <span>© 2026</span>
   </footer>
 
-  <script src="site/js/script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
